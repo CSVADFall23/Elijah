@@ -104,11 +104,13 @@ void dragPalette() {
 }
 
 int getPaletteIndex() {
-  float w = width/palette.size();
-  for (int i = 1; i < palette.size()+1; i++) {
-    if (mouseX < i*w) {
-      int index = i-1;
-      return index;
+  if (palette.size() > 0) {
+    float w = width/palette.size();
+    for (int i = 1; i < palette.size()+1; i++) {
+      if (mouseX < i*w) {
+        int index = i-1;
+        return index;
+      }
     }
   }
   return 0;
